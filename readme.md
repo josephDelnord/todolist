@@ -1,4 +1,4 @@
-# Todolist avec Node.js, Reac et Tailwind
+# Todolist avec Node.js, React et Tailwind
 
 Ce projet est une application de **ToDo List** développée avec **React** pour le frontend, **Node.js** pour le backend, et **Vite.js** comme outil de construction et de développement.
 
