@@ -1,82 +1,123 @@
-# Todolist avec Node.js, React et Tailwind
+# To-Do List Application
 
-Ce projet est une application de **ToDo List** développée avec **React** pour le frontend, **Node.js** pour le backend, et **Vite.js** comme outil de construction et de développement.
+Une application de gestion de tâches simple et moderne développée avec React, TypeScript et Axios pour interagir avec une API.
 
-L'application permet aux utilisateurs de créer, lire, mettre à jour et supprimer des tâches. Le frontend est construit avec React, tandis que le backend utilise Node.js et un serveur Express pour gérer les opérations liées aux tâches.
+## Description
 
-## Aperçu du projet
+L'application "To-Do List" permet aux utilisateurs de gérer leurs tâches quotidiennes. Elle offre des fonctionnalités de base telles que l'ajout, la modification, la suppression et la gestion du statut des tâches (terminée ou en cours).
 
-Voici à quoi ressemble l'interface du todolist :
-
-![Aperçu du projet](./frontend/public/images/todolist.png)
+Les tâches sont récupérées depuis une API et les mises à jour sont automatiquement affichées sans nécessiter de rechargement de la page. L'application utilise un design moderne avec des couleurs attrayantes et une interface épurée, adaptée aux appareils mobiles et de bureau.
 
 ## Fonctionnalités
 
-- Ajouter, modifier et supprimer des tâches.
-- Marquer les tâches comme complètes.
-- Stockage des données côté serveur avec une API RESTful en Node.js.
-- Développement rapide avec Vite.js.
-
-## Architecture du projet
-
-Le projet est divisé en deux parties principales : le frontend et le backend.
-
-### Frontend (React + Vite.js + tailwind)
-- **React** : Bibliothèque JavaScript pour construire l'interface utilisateur.
-- **Vite.js** : Outil de développement rapide pour React, offrant un rechargement à chaud et une compilation optimisée.
-- **Tailwind** : Framework CSS utilitaire-first qui permet de créer rapidement des interfaces personnalisées en utilisant des classes utilitaires pré-définies, offrant ainsi flexibilité et contrôle sur la mise en page et le style sans écrire de CSS personnalisé.
-
-### Backend (Node.js + Express)
-- **Node.js** : Environnement d'exécution JavaScript côté serveur.
-- **Express** : Framework minimaliste pour construire des API RESTful.
-
+- **Ajouter une tâche** : Saisissez une description et ajoutez une nouvelle tâche à la liste.
+- **Modifier une tâche** : Modifiez le texte d'une tâche existante.
+- **Supprimer une tâche** : Supprimez des tâches de la liste.
+- **Gérer le statut des tâches** : Marquez une tâche comme terminée ou non terminée.
+- **Réactivité** : L'application est responsive et s'adapte à différentes tailles d'écran.
 
 ## Prérequis
 
-Avant de commencer, vous devez avoir les éléments suivants installés sur votre machine :
+Avant de commencer, assurez-vous d'avoir installé les éléments suivants sur votre machine :
 
-- [Node.js](https://nodejs.org/) (version 14 ou supérieure)
-- [npm](https://www.npmjs.com/) ou [Yarn](https://yarnpkg.com/) pour la gestion des paquets
+- **Node.js** (version 14 ou supérieure) : [Télécharger Node.js](https://nodejs.org/)
+- **npm** (Node Package Manager) ou **yarn** pour gérer les dépendances.
 
 ## Installation
 
-### 1. Cloner le repository
+1. Clonez ce dépôt sur votre machine locale :
 
-Clonez ce repository sur votre machine locale :
+   ```bash
+   git clone https://github.com/votre-nom-utilisateur/to-do-list.git
+   cd to-do-list
+	 ```
+2. Installez les dépendances :
+   ```bash
+   npm install
+   # ou
+   yarn install
+   ```
+3. Lancez l'application en mode développement :
+   ```bash
+   npm start
+   # ou
+   yarn start
+   ```
+4. Ouvrez votre navigateur web et accédez à `http://localhost:3000` pour utiliser l'application.
 
-```bash
-git clone https://github.com/yourusername/todolist-app.git
-cd todolist
+## Structure du projet
+
+Voici un aperçu de la structure du projet :
+
+```Bash
+to-do-list/
+├── public/
+│   └── index.html            # Fichier HTML principal
+├── src/
+│   ├── components/
+│   │   ├── AddTask.tsx       # Composant pour ajouter une tâche
+│   │   └── TaskList.tsx      # Composant pour afficher la liste des tâches
+│   ├── App.tsx               # Composant principal de l'application
+│   ├── main.tsx              # Point d'entrée de l'application
+│   └── styles/
+│       └── index.css         # Fichier CSS global
+├── package.json              # Dépendances et configurations du projet
+└── tsconfig.json             # Configuration TypeScript
 ```
 
-## 2. Installation des dépendances
+## Technologies Utilisées
 
-### Pour le backend (Node.js) :
+- Node.js : Environnement d'exécution JavaScript côté serveur.
 
-```bash
-cd backend
-npm install
-```
+- Express : Framework web pour Node.js.
 
-### Pour le frontend (React + Vite.js) :
+- React : Librairie JavaScript pour construire l'interface utilisateur.
 
-```bash
-cd frontend
-npm install
-```
+- TypeScript : Surcouche de JavaScript permettant une typage statique et des outils de développement améliorés.
 
-## 3. Démarrer le projet
+- Axios : Librairie pour effectuer des requêtes HTTP et interagir avec l'API.
 
-### Démarrer le backend (Node.js) :
+- Tailwind CSS : Framework CSS utilitaire pour un design rapide et flexible.
 
-```bash
-cd backend
-npm start
-```
+- Vite : Outil de construction ultra-rapide pour les projets React.
 
-### Démarrer le frontend (React + Vite.js) :
+## API Backend
 
-```bash
-cd frontend
-npm run dev
-```
+L'application est connectée à une API qui permet de gérer les tâches. Voici quelques endpoints utilisés dans l'application :
+
+- GET `/api/tasks` : Récupérer toutes les tâches.
+
+- POST `/api/tasks` : Ajouter une nouvelle tâche.
+
+- PUT `/api/tasks/:id` : Modifier une tâche existante (mettre à jour le texte ou le statut).
+
+- DELETE `/api/tasks/:id` : Supprimer une tâche.
+
+## Améliorations possibles
+
+- Authentification : Ajouter un système d'authentification pour permettre aux utilisateurs de se connecter et de gérer leurs tâches personnelles.
+
+- Priorisation des tâches : Ajouter un champ de priorité pour chaque tâche et permettre de trier les tâches par priorité.
+
+- Notifications : Ajouter des notifications pour rappeler les tâches non terminées.
+
+- API publique : Déployer l'API sur un service comme Heroku ou Render.
+
+## Contribution
+
+Les contributions sont les bienvenues ! Si vous souhaitez améliorer cette application, veuillez suivre ces étapes :
+
+1. Fork ce dépôt.
+
+2. Créez une branche pour votre fonctionnalité (git checkout -b feature/nom-de-la-fonctionnalité).
+
+3. Effectuez vos modifications et committez-les (git commit -am 'Ajout de ma fonctionnalité').
+
+4. Poussez votre branche (git push origin feature/nom-de-la-fonctionnalité).
+
+5. Ouvrez une pull request.
+
+
+## Auteurs
+
+- [@josephDelnord](https://github.com/josephDelnord)
